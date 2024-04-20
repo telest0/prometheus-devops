@@ -1,0 +1,20 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: rsync-job
+spec:
+  template:
+    spec:
+      containers:
+      - name: rsync-container
+        image: your-image:latest
+        volumeMounts:
+        - name: input-data
+          mountPath: /data/input
+        command: ["/bin/bash"]
+        args: ["-c", "rsync -r /data/input gs://your-bucket-name"]
+      restartPolicy: OnFailure
+      volumes:
+      - name: input-data
+        persistentVolumeClaim:
+          claimName: pvc-data-input
