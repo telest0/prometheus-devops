@@ -9,7 +9,7 @@ This project is a `kubectl` plugin to generate and apply Kubernetes manifests us
 
 ## Prompt portfolio
 
-|    Name    |     Prompt     |   Description |      Example       |
+| NAME                        | PROMPT                             | DESCRIPTION                                                              | EXAMPLE                                     |
 |------------|----------------|---------------|--------------------|
 | app.yaml | create app pod | Create an application in pod | [app.yaml](./yaml/app.yaml) |
 | app-configmap.yaml     | create redis pod with configmap | Store non-confidential data in key-value pairs | [app-configmap.yaml](./yaml/app-configmap.yaml) |
